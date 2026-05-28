@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contatti | Hakanai Petals</title>
+    <meta name="description" content="Contatta Sara Fanelli, autrice di Hakanai Petals.">
+    <link rel="icon" href="immagini%20/PHOTO-2026-05-15-18-26-58.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="music.js" defer></script>
+  </head>
+  <body data-sound="contact">
+    <a class="skip-link" href="#contenuto">Salta al contenuto principale</a>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Navigazione principale">
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">儚</span><span>Hakanai Petals</span></a>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a aria-current="page" href="contact.html">Contatti</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="contenuto" class="page-shell">
+      <section class="page-hero" aria-labelledby="contact-title">
+        <p class="kicker">Contact</p>
+        <h1 id="contact-title">Lascia un messaggio fra i petali.</h1>
+        <p class="subtitle">Se un verso ti ha parlato, puoi mandarmi una parola o un pensiero.</p>
+      </section>
+
+      <section class="section compact-section">
+        <div class="contact-panel">
+          <div>
+            <h2>Rispondero' piano</h2>
+            <p>Come si risponde a una poesia: con cura, tempo e attenzione.</p>
+            <a class="button primary" href="https://www.instagram.com/HakanaiPetals" rel="me noopener noreferrer">Scrivi su Instagram</a>
+          </div>
+          <form class="contact-form" action="mailto:" method="post" enctype="text/plain" aria-describedby="contact-note">
+            <label for="name">Nome</label>
+            <input id="name" name="Nome" type="text" autocomplete="name">
+            <label for="email">Email</label>
+            <input id="email" name="Email" type="email" autocomplete="email">
+            <label for="message">Messaggio</label>
+            <textarea id="message" name="Messaggio" rows="5"></textarea>
+            <button class="button secondary" type="submit">Prepara email</button>
+            <p id="contact-note" class="form-note">Il form prepara il messaggio nel client email. Aggiungi l'indirizzo reale prima del deploy.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <button class="sound-control" type="button" aria-pressed="false" data-sound-toggle>Attiva suono</button>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="poetic-signature">"Scrivo ancora. Anche quando non mi legge nessuno." - Sara</p>
+        <ul class="footer-links" aria-label="Link footer"><li><a href="privacy.html">Privacy policy</a></li></ul>
+      </div>
+    </footer>
+  </body>
+</html>
