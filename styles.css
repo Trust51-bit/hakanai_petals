@@ -1015,13 +1015,16 @@ h3 {
   min-height: 100%;
   place-items: center;
   align-content: center;
-  gap: 1rem;
+  justify-items: center;
+  gap: 1.35rem;
+  text-align: center;
 }
 
 .contact-poem {
   margin: 0;
-  color: rgba(143, 75, 77, 0.58) !important;
-  font-size: clamp(1.35rem, 3vw, 2.2rem) !important;
+  width: min(100%, 18rem);
+  color: rgba(143, 75, 77, 0.42) !important;
+  font-size: clamp(1.25rem, 2.6vw, 1.9rem) !important;
   font-style: italic;
   line-height: 1.35;
   text-align: center !important;
@@ -1029,11 +1032,14 @@ h3 {
 
 .contact-poem-flower {
   display: block;
-  width: min(72%, 14rem);
+  width: min(62%, 10rem);
   height: auto;
-  opacity: 0.48;
+  margin: 1.75rem auto;
+  opacity: 0.42;
   mix-blend-mode: multiply;
   pointer-events: none;
+  transform: rotate(-90deg) scale(1.35);
+  transform-origin: center;
 }
 
 .contact-form {
