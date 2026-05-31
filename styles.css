@@ -270,7 +270,6 @@ img {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 h1,
@@ -298,7 +297,10 @@ h2 {
 .author-copy h1,
 .section-copy h2,
 .section-heading h2,
-.contact-panel h2 {
+.contact-panel h2,
+.note-card h3,
+.post-list h2,
+.post-list h3 {
   position: relative;
   display: inline-block;
   isolation: isolate;
@@ -318,7 +320,10 @@ h2 {
 .author-copy h1::before,
 .section-copy h2::before,
 .section-heading h2::before,
-.contact-panel h2::before {
+.contact-panel h2::before,
+.note-card h3::before,
+.post-list h2::before,
+.post-list h3::before {
   position: absolute;
   inset: -0.5em -0.28em -0.35em;
   z-index: -1;
@@ -345,6 +350,9 @@ h2 {
   .section-copy h2,
   .section-heading h2,
   .contact-panel h2,
+  .note-card h3,
+  .post-list h2,
+  .post-list h3,
   .author-main-photo figcaption,
   .author-signature {
     background-image:
@@ -373,16 +381,14 @@ h1 {
   font-size: clamp(3.4rem, 12vw, 8rem);
   font-weight: 500;
   letter-spacing: 0;
-  text-transform: uppercase;
 }
 
 .home-hero h1 {
-  display: grid;
-  gap: clamp(0.08em, 1vw, 0.16em);
+  display: inline-block;
   width: 100%;
-  margin: clamp(1.1rem, 3vw, 2.2rem) auto 0;
-  font-size: clamp(3.4rem, 15.5vw, 13.8rem);
-  line-height: 0.78;
+  margin: clamp(1.2rem, 3vw, 2.4rem) auto 0;
+  font-size: clamp(2.35rem, 11.2vw, 9rem);
+  line-height: 0.95;
   text-align: center;
   text-shadow:
     0 1px 0 rgba(255, 255, 255, 0.74),
@@ -390,12 +396,8 @@ h1 {
     0.045em 0.04em 0 rgba(143, 75, 77, 0.1);
 }
 
-.home-hero h1 span {
-  display: block;
-}
-
 .home-hero h1::before {
-  inset: -0.9em 10% -0.55em;
+  inset: -1.2em 8% -0.7em;
   background-image:
     linear-gradient(180deg, rgba(255, 253, 248, 0.26), rgba(255, 253, 248, 0.78)),
     url("immagini%20/PHOTO-2026-05-15-18-26-58%203.jpg");
@@ -743,7 +745,6 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-align: center;
-  text-transform: uppercase;
 }
 
 .author-copy {
