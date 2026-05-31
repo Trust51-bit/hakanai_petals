@@ -517,6 +517,8 @@ h3 {
 }
 
 .home-section-links {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.8rem;
@@ -584,8 +586,9 @@ h3 {
 
 .petal-field {
   position: absolute;
-  inset: auto 50% -7.2rem auto;
-  width: min(86vw, 34rem);
+  inset: auto 50% -4.4rem auto;
+  z-index: 0;
+  width: min(92vw, 58rem);
   pointer-events: none;
   transform: translateX(50%);
 }
@@ -605,18 +608,19 @@ h3 {
   width: 100%;
   height: auto;
   border: 1px solid rgba(234, 216, 207, 0.72);
-  border-radius: 999px;
+  border-radius: var(--radius);
   box-shadow: 0 1rem 2.4rem rgba(86, 49, 38, 0.1);
   filter:
-    sepia(0.28)
-    saturate(0.72)
-    hue-rotate(305deg)
-    brightness(1.13)
-    contrast(0.84);
-  opacity: 0.64;
+    sepia(0.2)
+    saturate(0.62)
+    hue-rotate(318deg)
+    brightness(1.16)
+    contrast(0.78);
+  opacity: 0.28;
   object-fit: cover;
-  aspect-ratio: 16 / 5;
-  mix-blend-mode: multiply;
+  object-position: center 72%;
+  aspect-ratio: 16 / 4.8;
+  mix-blend-mode: soft-light;
 }
 
 .page-shell {
