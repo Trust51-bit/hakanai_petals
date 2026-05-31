@@ -45,7 +45,7 @@
             <p class="contact-poem">Risponderò piano, come si risponde a una poesia</p>
             <img class="contact-poem-flower" src="immagini%20/PHOTO-2026-05-15-18-26-58%203.jpg" alt="" aria-hidden="true">
           </div>
-          <form class="contact-form" action="mailto:hakanaipetals.thediary@gmail.com?subject=Nuovo%20messaggio%20da%20Hakanai%20Petals" method="post" enctype="text/plain">
+          <form class="contact-form" action="mailto:hakanaipetals.thediary@gmail.com" method="get" data-email-form>
             <label for="name">Nome</label>
             <input id="name" name="Nome" type="text" autocomplete="name" required>
             <label for="email">Email</label>
@@ -79,5 +79,21 @@
         <ul class="footer-links" aria-label="Link footer"><li><a class="instagram-link" href="https://www.instagram.com/hakanaiPetals.thediary" rel="me noopener noreferrer"><img class="instagram-icon" src="immagini%20/logo%20di%20instagram.jpeg" alt="" aria-hidden="true">Instagram @hakanaiPetals.thediary</a></li><li><a href="privacy.html">Privacy & Policy</a></li></ul>
       </div>
     </footer>
+    <script>
+      document.querySelector("[data-email-form]")?.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const form = event.currentTarget;
+        if (!form.reportValidity()) return;
+
+        const name = form.elements.Nome.value.trim();
+        const email = form.elements.Email.value.trim();
+        const message = form.elements.Messaggio.value.trim();
+        const body = `Nome: ${name}\nEmail: ${email}\n\nMessaggio:\n${message}`;
+        const subject = "Nuovo messaggio da Hakanai Petals";
+
+        window.location.href = `mailto:hakanaipetals.thediary@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+    </script>
   </body>
 </html>
