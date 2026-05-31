@@ -1,12 +1,12 @@
 :root {
-  --bg-color: #fffdf8;
-  --surface: #fffaf4;
-  --surface-strong: #f7e8de;
+  --bg-color: #fdf8f5;
+  --surface: #fffaf7;
+  --surface-strong: #f3e4dc;
   --text-main: #1a1a1a;
-  --text-muted: #4f443f;
-  --text-soft: #6d5f58;
+  --text-muted: #4a4a4a;
+  --text-soft: #5f5652;
   --border: #ead8cf;
-  --accent: #d99a91;
+  --accent: #efb7b7;
   --accent-strong: #8f4b4d;
   --leaf: #7f9685;
   --petal: #f1c6bd;
@@ -35,7 +35,7 @@ body {
     radial-gradient(circle at 12% 8%, rgba(250, 225, 215, 0.72), transparent 28rem),
     linear-gradient(180deg, var(--bg-color) 0%, #fffaf6 54%, #f8eee8 100%);
   color: var(--text-main);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, "Crimson Pro", "Times New Roman", serif;
   line-height: 1.65;
   text-rendering: optimizeLegibility;
 }
@@ -239,10 +239,11 @@ img {
 }
 
 .home-hero .moon-mark {
-  top: clamp(-2rem, -3vw, -0.5rem);
-  right: clamp(-0.5rem, 3vw, 2.5rem);
-  width: clamp(5rem, 12vw, 9.8rem);
-  opacity: 0.34;
+  top: auto;
+  right: clamp(0.5rem, 9vw, 8rem);
+  bottom: clamp(6rem, 16vw, 11rem);
+  width: clamp(3.5rem, 8vw, 6.5rem);
+  opacity: 0.42;
 }
 
 .hero-logo {
@@ -381,13 +382,14 @@ h1 {
   font-size: clamp(2.55rem, 9vw, 6.25rem);
   font-weight: 500;
   letter-spacing: 0;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
 .home-hero h1 {
   display: inline-block;
   width: 100%;
   margin: clamp(1.2rem, 3vw, 2.4rem) auto 0;
-  font-size: clamp(2.15rem, 9.8vw, 7.6rem);
+  font-size: clamp(2.15rem, 9.8vw, 7.8rem);
   line-height: 0.95;
   text-align: center;
   text-shadow:
@@ -405,6 +407,10 @@ h1 {
   background-size: min(28rem, 42vw) auto;
   opacity: 0.26;
   transform: none;
+}
+
+.home-kanji {
+  margin-top: clamp(0.7rem, 1.6vw, 1.2rem);
 }
 
 .floral-kicker {
@@ -471,6 +477,7 @@ h2 {
   margin: 0;
   font-size: clamp(1.65rem, 4vw, 3.15rem);
   font-weight: 500;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
 h3 {
@@ -493,6 +500,7 @@ h3 {
   margin: 2rem auto 0;
   color: var(--text-muted);
   font-size: 1.1rem;
+  font-style: italic;
   text-align: center;
 }
 
@@ -508,6 +516,14 @@ h3 {
   margin-top: 2.25rem;
 }
 
+.home-section-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  width: min(100%, 52rem);
+  margin: 2.25rem auto 0;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -516,7 +532,7 @@ h3 {
   border: 1px solid transparent;
   border-radius: 999px;
   padding: 0.85rem 1.15rem;
-  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-family: "Crimson Pro", Georgia, "Times New Roman", serif;
   font-weight: 700;
   text-decoration: none;
 }
@@ -671,6 +687,12 @@ h3 {
   margin-top: 0.75rem;
   color: var(--accent-strong);
   font-weight: 700;
+}
+
+.inline-note {
+  color: var(--accent-strong);
+  font-weight: 700;
+  font-style: italic;
 }
 
 .category-grid {
@@ -1125,6 +1147,7 @@ h3 {
   .about-section,
   .author-profile,
   .category-grid,
+  .home-section-links,
   .word-grid,
   .visual-grid,
   .contact-panel {
@@ -1216,6 +1239,7 @@ h3 {
   }
 
   .hero-actions,
+  .home-section-links,
   .button {
     width: 100%;
   }
