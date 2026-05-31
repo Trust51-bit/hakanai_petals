@@ -768,6 +768,35 @@ h3 {
   line-height: 1.55;
 }
 
+.blog-sections {
+  color: rgba(74, 74, 74, 0.68);
+  font-style: italic;
+}
+
+.blog-sections .section-heading h2,
+.blog-sections .section-heading p,
+.blog-sections .category-card,
+.blog-sections .card-text {
+  color: rgba(74, 74, 74, 0.64);
+  font-style: italic;
+}
+
+.blog-sections .category-card {
+  border-color: rgba(234, 216, 207, 0.5);
+  background: rgba(255, 250, 244, 0.42);
+  box-shadow: none;
+  text-align: center;
+}
+
+.blog-sections .category-card::before {
+  display: none;
+}
+
+.blog-sections .card-title {
+  color: rgba(143, 75, 77, 0.58);
+  font-style: italic;
+}
+
 .about-section {
   border-top: 1px solid var(--border);
 }
