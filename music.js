@@ -36,6 +36,7 @@
 
   function setButton(isActive) {
     button.textContent = isActive ? "Disattiva suono" : "Attiva suono";
+    button.setAttribute("aria-label", isActive ? "Disattiva il sottofondo sonoro" : "Attiva il sottofondo sonoro");
     button.setAttribute("aria-pressed", String(isActive));
   }
 

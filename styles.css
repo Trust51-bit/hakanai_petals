@@ -407,10 +407,64 @@ h1 {
   transform: none;
 }
 
-.home-hero .kicker {
-  color: rgba(143, 75, 77, 0.72);
-  font-size: clamp(1.05rem, 2.4vw, 1.55rem);
+.floral-kicker {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: clamp(0.85rem, 3vw, 2.35rem);
+  margin-bottom: 0;
+  color: rgba(143, 75, 77, 0.68);
+  font-size: clamp(1rem, 2.1vw, 1.5rem);
   letter-spacing: 0.18em;
+  isolation: isolate;
+}
+
+.floral-kicker::before {
+  position: absolute;
+  top: 50%;
+  right: clamp(-4rem, -7vw, -1rem);
+  z-index: -1;
+  width: clamp(6.5rem, 18vw, 13rem);
+  aspect-ratio: 1.35;
+  content: "";
+  background-image: url("immagini%20/PHOTO-2026-05-15-18-26-58%203.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: saturate(0.7);
+  opacity: 0.18;
+  transform: translateY(-52%) rotate(3deg);
+  mask-image: radial-gradient(ellipse at center, #000 0 48%, transparent 76%);
+}
+
+.home-hero .floral-kicker {
+  gap: clamp(1.1rem, 4vw, 3rem);
+  font-size: clamp(1.35rem, 3vw, 2.2rem);
+}
+
+.floral-kicker .jp-word {
+  color: rgba(143, 75, 77, 0.78);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.42em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.78),
+    0 0.04em 0 rgba(143, 75, 77, 0.12);
+}
+
+.floral-kicker .latin-word {
+  font-size: 1.08em;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.floral-kicker .kicker-context {
+  color: rgba(109, 95, 88, 0.68);
+  font-size: 0.58em;
+  font-weight: 700;
+  letter-spacing: 0.16em;
 }
 
 h2 {
@@ -498,6 +552,18 @@ h3 {
 .author-profile,
 .post-list article {
   animation: blossom-fade 780ms ease-out both;
+}
+
+.hero-inner,
+.page-hero,
+.section,
+.author-profile,
+.category-card,
+.note-card,
+.post-list article,
+.contact-panel,
+.post-page .intro-text {
+  view-timeline-axis: block;
 }
 
 .petal-field {
@@ -1185,14 +1251,39 @@ h3 {
   }
 }
 
+@keyframes scroll-svanisce {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem) scale(0.985);
+    filter: blur(0.35rem);
+  }
+
+  28%,
+  68% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 0.2;
+    transform: translateY(-1rem) scale(0.992);
+    filter: blur(0.16rem);
+  }
+}
+
 @supports (animation-timeline: view()) {
   .section,
   .author-profile,
   .page-hero,
-  .post-list article {
-    animation-name: blossom-fade;
+  .category-card,
+  .note-card,
+  .post-list article,
+  .contact-panel,
+  .post-page .intro-text {
+    animation-name: scroll-svanisce;
     animation-timeline: view();
-    animation-range: entry 6% cover 34%;
+    animation-range: entry 0% exit 100%;
   }
 }
 
@@ -1204,5 +1295,43 @@ h3 {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+@media (prefers-contrast: more), (forced-colors: active) {
+  .hero h1,
+  .page-hero h1,
+  .post-page > h1,
+  .section > h1,
+  .author-copy h1,
+  .section-copy h2,
+  .section-heading h2,
+  .contact-panel h2,
+  .note-card h3,
+  .post-list h2,
+  .post-list h3,
+  .author-main-photo figcaption,
+  .author-signature {
+    color: CanvasText;
+    -webkit-text-fill-color: currentColor;
+    background-image: none;
+    text-shadow: none;
+  }
+
+  .hero h1::before,
+  .page-hero h1::before,
+  .post-page > h1::before,
+  .section > h1::before,
+  .author-copy h1::before,
+  .section-copy h2::before,
+  .section-heading h2::before,
+  .contact-panel h2::before,
+  .note-card h3::before,
+  .post-list h2::before,
+  .post-list h3::before,
+  .floral-kicker::before,
+  body::before,
+  body::after {
+    display: none;
   }
 }
