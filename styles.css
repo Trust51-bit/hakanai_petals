@@ -418,8 +418,9 @@ h1 {
   display: inline-flex;
   align-items: baseline;
   justify-content: center;
-  gap: clamp(0.85rem, 3vw, 2.35rem);
-  margin-bottom: 0;
+  gap: 0;
+  width: fit-content;
+  margin: 0.75rem auto 0;
   color: rgba(143, 75, 77, 0.68);
   font-size: clamp(1rem, 2.1vw, 1.5rem);
   letter-spacing: 0.18em;
@@ -429,7 +430,7 @@ h1 {
 .floral-kicker::before {
   position: absolute;
   top: 50%;
-  right: clamp(-4rem, -7vw, -1rem);
+  left: 50%;
   z-index: -1;
   width: clamp(6.5rem, 18vw, 13rem);
   aspect-ratio: 1.35;
@@ -440,12 +441,11 @@ h1 {
   background-size: contain;
   filter: saturate(0.7);
   opacity: 0.18;
-  transform: translateY(-52%) rotate(3deg);
+  transform: translate(-50%, -52%) rotate(3deg);
   mask-image: radial-gradient(ellipse at center, #000 0 48%, transparent 76%);
 }
 
 .home-hero .floral-kicker {
-  gap: clamp(1.1rem, 4vw, 3rem);
   font-size: clamp(1.35rem, 3vw, 2.2rem);
 }
 
@@ -460,17 +460,17 @@ h1 {
     0 0.04em 0 rgba(143, 75, 77, 0.12);
 }
 
-.floral-kicker .latin-word {
-  font-size: 1.08em;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-}
-
 .floral-kicker .kicker-context {
   color: rgba(109, 95, 88, 0.68);
   font-size: 0.58em;
   font-weight: 700;
   letter-spacing: 0.16em;
+}
+
+.home-signature {
+  color: rgba(109, 95, 88, 0.56);
+  font-size: 0.92rem;
+  font-style: italic;
 }
 
 h2 {
@@ -523,7 +523,7 @@ h3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.8rem;
   width: min(100%, 52rem);
-  margin: 2.25rem auto 0;
+  margin: clamp(3.4rem, 7vw, 5.8rem) auto 0;
 }
 
 .button {
@@ -675,6 +675,11 @@ h3 {
   text-align: left;
 }
 
+.section-feature .section-copy h2 {
+  font-size: clamp(1.25rem, 3vw, 2.05rem);
+  font-style: italic;
+}
+
 .section-feature .section-copy p {
   text-align: left;
 }
@@ -786,7 +791,7 @@ h3 {
   inset: 7% 8% 4% 2%;
   z-index: -1;
   border: 1px solid var(--border);
-  border-radius: 14rem 14rem 2rem 2rem;
+  border-radius: 50%;
   background: linear-gradient(180deg, rgba(255, 250, 244, 0.72), rgba(247, 232, 222, 0.72));
   content: "";
 }
@@ -797,15 +802,15 @@ h3 {
 
 .author-main-photo {
   position: relative;
-  width: min(100%, 31rem);
+  width: min(100%, 28rem);
 }
 
 .author-main-photo img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1;
   border: 1px solid var(--border);
-  border-radius: 14rem 14rem 1.4rem 1.4rem;
+  border-radius: 50%;
   background: var(--surface);
   box-shadow: var(--shadow);
   object-fit: cover;
@@ -813,11 +818,7 @@ h3 {
 }
 
 .author-main-photo figcaption {
-  margin-top: 0.75rem;
-  font-size: clamp(1.45rem, 4vw, 2.6rem);
-  font-style: italic;
-  line-height: 1;
-  text-align: center;
+  display: none;
 }
 
 .author-mini-photo {
@@ -856,6 +857,26 @@ h3 {
   text-transform: none;
 }
 
+.about-heading {
+  margin: 0.85rem 0 1rem;
+  color: rgba(143, 75, 77, 0.58);
+  font-style: italic;
+  text-align: center;
+}
+
+.about-heading p {
+  margin: 0.1rem 0;
+  text-align: center;
+}
+
+.about-kanji {
+  display: block;
+  width: min(12rem, 46vw);
+  margin: 0 auto 1.5rem;
+  opacity: 0.56;
+  mix-blend-mode: multiply;
+}
+
 .author-copy .subtitle {
   margin-left: 0;
   text-align: left;
@@ -872,7 +893,9 @@ h3 {
 }
 
 .author-signature {
-  font-size: 1.05rem !important;
+  color: rgba(143, 75, 77, 0.68) !important;
+  font-family: "Brush Script MT", "Snell Roundhand", "Cormorant Garamond", Georgia, serif;
+  font-size: 1.45rem !important;
   font-style: italic;
   line-height: 1.35;
 }
@@ -962,6 +985,38 @@ h3 {
   text-align: left;
 }
 
+.contact-intro {
+  width: min(100%, 43rem);
+  margin: 1.35rem auto 0;
+  color: rgba(74, 74, 74, 0.68);
+  font-style: italic;
+  text-align: center;
+}
+
+.contact-poem {
+  position: relative;
+  display: grid;
+  min-height: 100%;
+  place-items: center;
+  color: rgba(143, 75, 77, 0.58) !important;
+  font-size: clamp(1.35rem, 3vw, 2.2rem) !important;
+  font-style: italic;
+  line-height: 1.35;
+  text-align: center !important;
+}
+
+.contact-poem::before {
+  display: block;
+  width: 1.15rem;
+  height: 1.45rem;
+  margin-bottom: 0.85rem;
+  border-radius: 70% 30% 70% 30%;
+  background: linear-gradient(135deg, var(--petal-soft), var(--petal));
+  content: "";
+  opacity: 0.76;
+  transform: rotate(-24deg);
+}
+
 .contact-form {
   display: grid;
   gap: 0.65rem;
@@ -983,6 +1038,29 @@ h3 {
   color: var(--text-main);
   font: inherit;
   padding: 0.8rem 0.9rem;
+}
+
+.newsletter-section .contact-panel {
+  align-items: center;
+}
+
+.newsletter-section h2,
+.newsletter-section p {
+  font-style: italic;
+  text-align: center;
+}
+
+.newsletter-section .contact-form {
+  width: min(100%, 24rem);
+  justify-self: center;
+}
+
+.newsletter-section .contact-form input {
+  max-width: 18rem;
+}
+
+.newsletter-section .button {
+  font-style: italic;
 }
 
 .contact-form textarea {
@@ -1069,6 +1147,27 @@ h3 {
 
 .footer-links a {
   min-height: 44px;
+}
+
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.instagram-icon {
+  position: relative;
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: 1.08rem;
+  height: 1.08rem;
+  place-items: center;
+  border-radius: 0.32rem;
+  background:
+    radial-gradient(circle at 68% 32%, #fff 0 0.08rem, transparent 0.09rem),
+    radial-gradient(circle at center, transparent 0 0.24rem, #fff 0.25rem 0.32rem, transparent 0.33rem),
+    linear-gradient(135deg, #f8c7c3, #d99a91 52%, #8f4b4d);
+  box-shadow: inset 0 0 0 1px rgba(143, 75, 77, 0.18);
 }
 
 .redirect-page {
