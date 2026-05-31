@@ -45,13 +45,15 @@
             <p class="contact-poem">Risponderò piano, come si risponde a una poesia</p>
             <img class="contact-poem-flower" src="immagini%20/PHOTO-2026-05-15-18-26-58%203.jpg" alt="" aria-hidden="true">
           </div>
-          <form class="contact-form" action="mailto:" method="post" enctype="text/plain">
+          <form class="contact-form" action="https://formsubmit.co/hakanaipetals.thediary@gmail.com" method="post">
+            <input type="hidden" name="_subject" value="Nuovo messaggio da Hakanai Petals">
+            <input type="hidden" name="_template" value="table">
             <label for="name">Nome</label>
-            <input id="name" name="Nome" type="text" autocomplete="name">
+            <input id="name" name="Nome" type="text" autocomplete="name" required>
             <label for="email">Email</label>
-            <input id="email" name="Email" type="email" autocomplete="email">
+            <input id="email" name="Email" type="email" autocomplete="email" required>
             <label for="message">Messaggio</label>
-            <textarea id="message" name="Messaggio" rows="5"></textarea>
+            <textarea id="message" name="Messaggio" rows="5" required></textarea>
             <button class="button secondary" type="submit">Scrivimi</button>
           </form>
         </div>
