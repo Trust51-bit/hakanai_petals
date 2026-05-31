@@ -8,6 +8,7 @@
   --border: #ead8cf;
   --accent: #d99a91;
   --accent-strong: #8f4b4d;
+  --leaf: #7f9685;
   --petal: #f1c6bd;
   --petal-soft: #f9e7df;
   --focus: #234b84;
@@ -25,9 +26,11 @@ html {
 }
 
 body {
+  position: relative;
   min-width: 320px;
   margin: 0;
   background:
+    linear-gradient(100deg, rgba(127, 150, 133, 0.08), transparent 34rem),
     radial-gradient(circle at 82% 18%, rgba(245, 207, 199, 0.46), transparent 18rem),
     radial-gradient(circle at 12% 8%, rgba(250, 225, 215, 0.72), transparent 28rem),
     linear-gradient(180deg, var(--bg-color) 0%, #fffaf6 54%, #f8eee8 100%);
@@ -38,13 +41,15 @@ body {
 }
 
 main {
+  position: relative;
+  z-index: 1;
   text-align: left;
 }
 
 body::before {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   content: "";
   background-image: radial-gradient(ellipse at center, rgba(217, 154, 145, 0.2) 0 12%, transparent 13%);
@@ -52,6 +57,29 @@ body::before {
   background-size: 8rem 5rem;
   opacity: 0.28;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.68), transparent 82%);
+}
+
+body::after {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.1), rgba(255, 250, 246, 0.78)),
+    url("immagini%20/PHOTO-2026-05-15-18-26-58%203.jpg"),
+    url("immagini%20/PHOTO-2026-05-15-18-26-58.jpg");
+  background-position:
+    center,
+    right clamp(-3rem, -4vw, 0rem) bottom clamp(-4rem, -6vw, -1rem),
+    left clamp(-5rem, -7vw, -1rem) top 9rem;
+  background-repeat: no-repeat;
+  background-size:
+    cover,
+    min(34rem, 58vw) auto,
+    min(23rem, 44vw) auto;
+  mix-blend-mode: multiply;
+  opacity: 0.2;
 }
 
 a {
@@ -248,6 +276,71 @@ h3 {
   line-height: 1.1;
 }
 
+h1,
+h2 {
+  color: rgba(26, 26, 26, 0.76);
+}
+
+.hero h1,
+.page-hero h1,
+.post-page > h1,
+.section > h1,
+.author-copy h1,
+.section-copy h2,
+.section-heading h2,
+.contact-panel h2 {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.hero h1::before,
+.page-hero h1::before,
+.post-page > h1::before,
+.section > h1::before,
+.author-copy h1::before,
+.section-copy h2::before,
+.section-heading h2::before,
+.contact-panel h2::before {
+  position: absolute;
+  inset: -0.5em -0.28em -0.35em;
+  z-index: -1;
+  content: "";
+  background-image:
+    linear-gradient(90deg, rgba(255, 253, 248, 0.1), rgba(255, 253, 248, 0.7)),
+    url("immagini%20/PHOTO-2026-05-15-18-26-58%203.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: saturate(0.86);
+  mix-blend-mode: multiply;
+  opacity: 0.34;
+  transform: rotate(-3deg);
+  mask-image: radial-gradient(ellipse at center, #000 0 52%, transparent 76%);
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero h1,
+  .page-hero h1,
+  .post-page > h1,
+  .section > h1,
+  .author-copy h1,
+  .section-copy h2,
+  .section-heading h2,
+  .contact-panel h2 {
+    background-image:
+      linear-gradient(110deg, rgba(26, 26, 26, 0.7), rgba(143, 75, 77, 0.5), rgba(75, 91, 79, 0.52)),
+      url("immagini%20/PHOTO-2026-05-15-18-26-58.jpg");
+    background-position: center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: rgba(143, 75, 77, 0.42);
+    -webkit-text-fill-color: transparent;
+  }
+}
+
 h1 {
   margin: 0;
   font-size: clamp(3.4rem, 12vw, 8rem);
@@ -330,6 +423,17 @@ h3 {
   width: min(100% - 2rem, var(--max-width));
   margin: 0 auto;
   padding: clamp(3rem, 7vw, 5.5rem) 0;
+}
+
+.hero-inner,
+.page-hero,
+.post-page > .kicker,
+.post-page > h1,
+.post-page > .subtitle,
+.section,
+.author-profile,
+.post-list article {
+  animation: blossom-fade 780ms ease-out both;
 }
 
 .petal-field {
@@ -452,7 +556,7 @@ h3 {
   align-content: start;
   gap: 0.8rem;
   border: 1px solid var(--border);
-  border-radius: 1.4rem;
+  border-radius: var(--radius);
   background: rgba(255, 250, 244, 0.88);
   color: var(--text-main);
   padding: 1.25rem;
@@ -470,6 +574,11 @@ h3 {
   box-shadow: 0 16px 38px rgba(72, 42, 35, 0.1);
   color: var(--text-main);
   transform: translateY(-2px);
+}
+
+.category-card:nth-child(2n)::before,
+.post-list article:nth-child(2n)::before {
+  background: linear-gradient(135deg, rgba(223, 233, 218, 0.9), rgba(241, 198, 189, 0.84));
 }
 
 .card-symbol {
@@ -757,6 +866,8 @@ h3 {
 }
 
 .site-footer {
+  position: relative;
+  z-index: 1;
   border-top: 1px solid var(--border);
   padding: 2rem 1rem;
   background: rgba(255, 253, 251, 0.64);
@@ -835,11 +946,26 @@ h3 {
 }
 
 .post-list article {
+  position: relative;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: rgba(255, 253, 251, 0.74);
   padding: clamp(1rem, 4vw, 1.55rem);
   text-align: left;
+}
+
+.post-list article::before {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.15rem;
+  display: block;
+  width: 0.82rem;
+  height: 1.05rem;
+  border-radius: 70% 30% 70% 30%;
+  background: linear-gradient(135deg, var(--petal-soft), var(--petal));
+  content: "";
+  opacity: 0.82;
+  transform: rotate(26deg);
 }
 
 .post-list h2 {
@@ -921,6 +1047,18 @@ h3 {
     min-height: 12rem;
   }
 
+  body::after {
+    background-position:
+      center,
+      right -8rem bottom -2rem,
+      left -7rem top 14rem;
+    background-size:
+      cover,
+      22rem auto,
+      16rem auto;
+    opacity: 0.16;
+  }
+
   .footer-links {
     justify-content: flex-start;
   }
@@ -970,6 +1108,29 @@ h3 {
   .sound-control {
     right: 0.75rem;
     bottom: 0.75rem;
+  }
+}
+
+@keyframes blossom-fade {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .section,
+  .author-profile,
+  .page-hero,
+  .post-list article {
+    animation-name: blossom-fade;
+    animation-timeline: view();
+    animation-range: entry 6% cover 34%;
   }
 }
 
