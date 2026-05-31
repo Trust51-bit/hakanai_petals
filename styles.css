@@ -1256,6 +1256,21 @@ h3 {
   text-align: center;
 }
 
+.post-page > .floral-kicker {
+  display: flex;
+  width: max-content;
+  max-width: min(100%, 24rem);
+  margin: 1rem auto 0.35rem;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.45rem, 3.8vw, 2.45rem);
+}
+
+.post-page > .floral-kicker::before {
+  width: clamp(10rem, 28vw, 18rem);
+  opacity: 0.22;
+}
+
 .post-page > h1 {
   display: block;
   width: fit-content;
