@@ -787,13 +787,7 @@ h3 {
 }
 
 .author-gallery::before {
-  position: absolute;
-  inset: 7% 8% 4% 2%;
-  z-index: -1;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  background: linear-gradient(180deg, rgba(255, 250, 244, 0.72), rgba(247, 232, 222, 0.72));
-  content: "";
+  display: none;
 }
 
 .author-gallery figure {
@@ -862,19 +856,12 @@ h3 {
   color: rgba(143, 75, 77, 0.58);
   font-style: italic;
   text-align: center;
+  white-space: normal;
 }
 
 .about-heading p {
   margin: 0.1rem 0;
   text-align: center;
-}
-
-.about-kanji {
-  display: block;
-  width: min(12rem, 46vw);
-  margin: 0 auto 1.5rem;
-  opacity: 0.56;
-  mix-blend-mode: multiply;
 }
 
 .author-copy .subtitle {
@@ -1005,18 +992,6 @@ h3 {
   text-align: center !important;
 }
 
-.contact-poem::before {
-  display: block;
-  width: 1.15rem;
-  height: 1.45rem;
-  margin-bottom: 0.85rem;
-  border-radius: 70% 30% 70% 30%;
-  background: linear-gradient(135deg, var(--petal-soft), var(--petal));
-  content: "";
-  opacity: 0.76;
-  transform: rotate(-24deg);
-}
-
 .contact-form {
   display: grid;
   gap: 0.65rem;
@@ -1050,13 +1025,18 @@ h3 {
   text-align: center;
 }
 
+.newsletter-section .contact-panel > div {
+  display: grid;
+  justify-items: center;
+}
+
 .newsletter-section .contact-form {
-  width: min(100%, 24rem);
+  width: min(100%, 18rem);
   justify-self: center;
 }
 
 .newsletter-section .contact-form input {
-  max-width: 18rem;
+  width: 100%;
 }
 
 .newsletter-section .button {
@@ -1138,6 +1118,7 @@ h3 {
 .footer-links {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: flex-end;
   gap: 0.5rem 1rem;
   margin: 0;
@@ -1146,6 +1127,8 @@ h3 {
 }
 
 .footer-links a {
+  display: inline-flex;
+  align-items: center;
   min-height: 44px;
 }
 
@@ -1156,18 +1139,11 @@ h3 {
 }
 
 .instagram-icon {
-  position: relative;
-  display: inline-grid;
   flex: 0 0 auto;
   width: 1.08rem;
   height: 1.08rem;
-  place-items: center;
-  border-radius: 0.32rem;
-  background:
-    radial-gradient(circle at 68% 32%, #fff 0 0.08rem, transparent 0.09rem),
-    radial-gradient(circle at center, transparent 0 0.24rem, #fff 0.25rem 0.32rem, transparent 0.33rem),
-    linear-gradient(135deg, #f8c7c3, #d99a91 52%, #8f4b4d);
-  box-shadow: inset 0 0 0 1px rgba(143, 75, 77, 0.18);
+  border-radius: 0.3rem;
+  object-fit: cover;
 }
 
 .redirect-page {
