@@ -713,6 +713,31 @@ h3 {
   font-style: italic;
 }
 
+.read-more {
+  margin-top: 0.75rem;
+}
+
+.read-more summary {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  color: var(--accent-strong);
+  cursor: pointer;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.read-more summary:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.read-more p {
+  margin: 0.35rem 0 0;
+  color: rgba(74, 74, 74, 0.66);
+  font-style: italic;
+}
+
 .category-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
