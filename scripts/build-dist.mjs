@@ -107,8 +107,6 @@ if (existsSync(join(root, "styles.css"))) {
 
 if (existsSync(join(root, "music.js"))) {
   write(join(outDir, "music.js"), minifyJs(readFileSync(join(root, "music.js"), "utf8")));
-} else {
-  write(join(outDir, "music.js"), "");
 }
 
 console.log("Versione pubblica minificata creata in dist/");
