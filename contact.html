@@ -47,11 +47,11 @@
           </div>
           <form class="contact-form" action="mailto:hakanaipetals.thediary@gmail.com" method="get" data-email-form>
             <label for="name">Nome</label>
-            <input id="name" name="Nome" type="text" autocomplete="name" required>
+            <input id="name" name="Nome" type="text" autocomplete="name">
             <label for="email">Email</label>
-            <input id="email" name="Email" type="email" autocomplete="email" required>
+            <input id="email" name="Email" type="email" autocomplete="email">
             <label for="message">Messaggio</label>
-            <textarea id="message" name="Messaggio" rows="5" required></textarea>
+            <textarea id="message" name="Messaggio" rows="5"></textarea>
             <button class="button secondary" type="submit">Scrivimi</button>
           </form>
         </div>
@@ -83,16 +83,7 @@
       document.querySelector("[data-email-form]")?.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        const form = event.currentTarget;
-        if (!form.reportValidity()) return;
-
-        const name = form.elements.Nome.value.trim();
-        const email = form.elements.Email.value.trim();
-        const message = form.elements.Messaggio.value.trim();
-        const body = `Nome: ${name}\nEmail: ${email}\n\nMessaggio:\n${message}`;
-        const subject = "Nuovo messaggio da Hakanai Petals";
-
-        window.location.href = `mailto:hakanaipetals.thediary@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = "mailto:hakanaipetals.thediary@gmail.com";
       });
     </script>
   </body>
