@@ -584,10 +584,11 @@ h3 {
 
 .petal-field {
   position: absolute;
-  inset: auto 0 -4.5rem;
+  inset: auto 0 -5.25rem;
   display: flex;
   justify-content: center;
-  gap: clamp(0.7rem, 2vw, 1.35rem);
+  align-items: center;
+  gap: clamp(0.85rem, 2.4vw, 1.8rem);
   pointer-events: none;
 }
 
@@ -602,12 +603,47 @@ h3 {
   content: "";
 }
 
+.petal-field span {
+  position: relative;
+  width: clamp(1.35rem, 3vw, 2.2rem);
+  height: clamp(1.8rem, 4vw, 3rem);
+  border: 1px solid rgba(143, 75, 77, 0.18);
+  border-radius: 72% 28% 68% 32% / 74% 34% 66% 28%;
+  background:
+    radial-gradient(ellipse at 38% 28%, rgba(255, 255, 255, 0.76), transparent 34%),
+    linear-gradient(145deg, rgba(255, 239, 233, 0.96), rgba(239, 183, 183, 0.86) 58%, rgba(217, 154, 145, 0.62));
+  box-shadow:
+    inset -0.18rem -0.24rem 0.45rem rgba(143, 75, 77, 0.1),
+    0 0.5rem 1.1rem rgba(86, 49, 38, 0.1);
+}
+
+.petal-field span::after {
+  position: absolute;
+  inset: 14% auto 12% 48%;
+  width: 1px;
+  content: "";
+  background: linear-gradient(180deg, transparent, rgba(143, 75, 77, 0.26), transparent);
+  transform: rotate(11deg);
+}
+
 .petal-field span:nth-child(2n) {
-  transform: rotate(42deg);
+  transform: translateY(0.35rem) rotate(42deg) scale(0.88);
 }
 
 .petal-field span:nth-child(3n) {
-  transform: rotate(-24deg);
+  transform: translateY(-0.25rem) rotate(-24deg) scale(1.08);
+}
+
+.petal-field span:nth-child(4n) {
+  border-radius: 62% 38% 70% 30% / 66% 42% 58% 34%;
+  background:
+    radial-gradient(ellipse at 34% 24%, rgba(255, 255, 255, 0.8), transparent 32%),
+    linear-gradient(150deg, rgba(255, 245, 240, 0.98), rgba(244, 199, 188, 0.9) 62%, rgba(239, 183, 183, 0.68));
+  transform: translateY(0.1rem) rotate(18deg) scale(1.18);
+}
+
+.petal-field span:nth-child(5n) {
+  transform: translateY(-0.45rem) rotate(-44deg) scale(0.82);
 }
 
 .page-shell {
