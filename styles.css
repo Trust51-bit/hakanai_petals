@@ -204,6 +204,8 @@ img {
 
 .home-hero {
   min-height: calc(82svh - 74px);
+  overflow: hidden;
+  padding-top: clamp(2rem, 5vw, 4rem);
 }
 
 .hero-inner {
@@ -213,6 +215,7 @@ img {
 }
 
 .home-hero .hero-inner {
+  width: min(100%, 1260px);
   padding-inline: clamp(0rem, 5vw, 3rem);
 }
 
@@ -233,6 +236,13 @@ img {
   border-radius: 50%;
   background: var(--bg-color);
   content: "";
+}
+
+.home-hero .moon-mark {
+  top: clamp(-2rem, -3vw, -0.5rem);
+  right: clamp(-0.5rem, 3vw, 2.5rem);
+  width: clamp(5rem, 12vw, 9.8rem);
+  opacity: 0.34;
 }
 
 .hero-logo {
@@ -347,6 +357,15 @@ h2 {
     color: rgba(143, 75, 77, 0.42);
     -webkit-text-fill-color: transparent;
   }
+
+  .home-hero h1 {
+    background-image:
+      linear-gradient(105deg, rgba(36, 32, 31, 0.52), rgba(143, 75, 77, 0.28), rgba(74, 66, 64, 0.34)),
+      url("immagini%20/PHOTO-2026-05-15-18-26-58.jpg");
+    background-position: center 46%;
+    background-size: min(62rem, 88vw) auto;
+    color: rgba(74, 66, 64, 0.32);
+  }
 }
 
 h1 {
@@ -355,6 +374,41 @@ h1 {
   font-weight: 500;
   letter-spacing: 0;
   text-transform: uppercase;
+}
+
+.home-hero h1 {
+  display: grid;
+  gap: clamp(0.08em, 1vw, 0.16em);
+  width: 100%;
+  margin: clamp(1.1rem, 3vw, 2.2rem) auto 0;
+  font-size: clamp(3.4rem, 15.5vw, 13.8rem);
+  line-height: 0.78;
+  text-align: center;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.74),
+    0 0.045em 0 rgba(74, 66, 64, 0.14),
+    0.045em 0.04em 0 rgba(143, 75, 77, 0.1);
+}
+
+.home-hero h1 span {
+  display: block;
+}
+
+.home-hero h1::before {
+  inset: -0.9em 10% -0.55em;
+  background-image:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.26), rgba(255, 253, 248, 0.78)),
+    url("immagini%20/PHOTO-2026-05-15-18-26-58%203.jpg");
+  background-position: center;
+  background-size: min(28rem, 42vw) auto;
+  opacity: 0.26;
+  transform: none;
+}
+
+.home-hero .kicker {
+  color: rgba(143, 75, 77, 0.72);
+  font-size: clamp(0.84rem, 1.8vw, 1.18rem);
+  letter-spacing: 0.18em;
 }
 
 h2 {
