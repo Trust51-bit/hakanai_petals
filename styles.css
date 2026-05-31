@@ -881,6 +881,7 @@ h3 {
   border-radius: var(--radius);
   background: rgba(255, 253, 251, 0.72);
   padding: 1.2rem;
+  text-align: center;
 }
 
 .word-grid dt {
@@ -1078,6 +1079,10 @@ h3 {
 }
 
 .post-page > h1 {
+  display: block;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
   text-transform: none;
 }
 
