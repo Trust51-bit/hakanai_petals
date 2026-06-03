@@ -668,10 +668,12 @@ h3 {
     background-size: cover;
     color: rgba(74, 66, 64, 0.34);
     text-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.62),
-      0 0.08em 0.22em rgba(72, 42, 35, 0.08);
+      0 1px 0 rgba(255, 255, 255, 0.78),
+      0 0.03em 0.04em rgba(72, 42, 35, 0.38),
+      0 0.12em 0.28em rgba(72, 42, 35, 0.2);
     -webkit-background-clip: text;
     background-clip: text;
+    -webkit-text-stroke: 0.018em rgba(72, 42, 35, 0.42);
     -webkit-text-fill-color: transparent;
   }
 }
