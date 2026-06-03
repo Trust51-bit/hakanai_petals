@@ -23,10 +23,12 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   position: relative;
+  overflow-x: hidden;
   min-width: 320px;
   margin: 0;
   background:
@@ -104,6 +106,12 @@ svg {
 
 img {
   height: auto;
+}
+
+input,
+textarea,
+button {
+  max-width: 100%;
 }
 
 .skip-link {
@@ -1366,6 +1374,10 @@ h3 {
     min-height: auto;
   }
 
+  .home-hero {
+    min-height: auto;
+  }
+
   .section-feature,
   .about-section,
   .author-profile,
@@ -1438,27 +1450,288 @@ h3 {
   }
 }
 
-@media (max-width: 520px) {
-  .site-nav,
-  .section,
-  .footer-inner {
-    width: min(100% - 1rem, var(--max-width));
+@media (max-width: 640px) {
+  body::before {
+    opacity: 0.14;
+  }
+
+  body::after {
+    background-image:
+      linear-gradient(180deg, rgba(255, 253, 248, 0.44), rgba(255, 250, 246, 0.9)),
+      url("immagini%20/PHOTO-2026-05-15-18-26-58%203.jpg");
+    background-position:
+      center,
+      right -7rem top 10rem;
+    background-size:
+      cover,
+      18rem auto;
+    opacity: 0.14;
+  }
+
+  .site-nav {
+    gap: 0.55rem;
+    padding: 0.6rem 0;
   }
 
   .brand {
-    align-self: flex-start;
+    min-height: 40px;
+    font-size: 0.98rem;
+  }
+
+  .brand-mark {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
   }
 
   .nav-list {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem;
     width: 100%;
   }
 
   .nav-list a {
     justify-content: center;
+    min-height: 40px;
     border: 1px solid rgba(221, 200, 190, 0.78);
     background: rgba(255, 253, 251, 0.62);
+    padding: 0.35rem 0.45rem;
+    font-size: 0.9rem;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .hero {
+    padding: clamp(2rem, 8vw, 3rem) 0.75rem clamp(1.6rem, 7vw, 2.5rem);
+  }
+
+  .home-hero {
+    overflow: visible;
+    padding-top: clamp(1.35rem, 6vw, 2.25rem);
+  }
+
+  .home-hero .hero-inner {
+    padding-inline: 0.15rem;
+  }
+
+  h1 {
+    font-size: clamp(2.1rem, 12vw, 3.8rem);
+  }
+
+  .home-hero h1 {
+    margin-top: 0.8rem;
+    font-size: clamp(2.15rem, 13vw, 4.7rem);
+    line-height: 0.98;
+  }
+
+  .home-hero h1::before {
+    inset: -0.9em 2% -0.5em;
+    background-size: min(20rem, 72vw) auto;
+    opacity: 0.2;
+  }
+
+  .home-hero .moon-mark,
+  .moon-mark {
+    right: 0.35rem;
+    bottom: auto;
+    top: 0;
+    width: clamp(2.6rem, 13vw, 3.6rem);
+    opacity: 0.28;
+  }
+
+  .subtitle {
+    max-width: 33rem;
+    margin-top: 0.8rem;
+    font-size: clamp(1.04rem, 5.5vw, 1.35rem);
+    line-height: 1.35;
+  }
+
+  .intro-text {
+    margin-top: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .intro-text p {
+    margin: 0.4rem 0;
+  }
+
+  .home-section-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+    margin-top: 1.8rem;
+  }
+
+  .button {
+    min-height: 44px;
+    border-radius: var(--radius);
+    padding: 0.72rem 0.8rem;
+    line-height: 1.16;
+    text-align: center;
+  }
+
+  .petal-field {
+    bottom: -2rem;
+    width: min(100%, 32rem);
+    opacity: 0.7;
+  }
+
+  .petal-field img {
+    aspect-ratio: 16 / 6.5;
+    object-fit: cover;
+  }
+
+  .section {
+    width: min(100% - 1.25rem, var(--max-width));
+    padding: clamp(2.2rem, 8vw, 3.2rem) 0;
+  }
+
+  .section-feature {
+    gap: 1.1rem;
+  }
+
+  .section-feature .section-copy h2 {
+    font-size: clamp(1.35rem, 7vw, 2rem);
+  }
+
+  .page-shell,
+  .post-page {
+    width: min(100% - 1.25rem, var(--max-width));
+  }
+
+  .page-hero {
+    padding: clamp(2.35rem, 9vw, 3.5rem) 0 clamp(1.25rem, 6vw, 2rem);
+  }
+
+  .category-grid {
+    gap: 0.75rem;
+  }
+
+  .category-card {
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.12rem;
+  }
+
+  .card-text {
+    font-size: 0.98rem;
+    line-height: 1.45;
+  }
+
+  .author-profile {
+    gap: 1.35rem;
+    padding: clamp(2rem, 8vw, 3rem) 0;
+  }
+
+  .author-gallery {
+    display: grid;
+    justify-items: center;
+  }
+
+  .author-main-photo {
+    width: min(72vw, 18rem);
+  }
+
+  .author-copy p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .author-copy .hero-actions {
+    gap: 0.55rem;
+    margin-top: 1.4rem;
+  }
+
+  .contact-panel {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .contact-poem-wrap {
+    gap: 0.75rem;
+    min-height: auto;
+  }
+
+  .contact-poem-flower {
+    width: min(42%, 7rem);
+    margin: 0.8rem auto;
+    transform: rotate(-90deg) scale(1.1);
+  }
+
+  .newsletter-section .contact-form {
+    width: 100%;
+  }
+
+  .post-page {
+    padding: clamp(2.35rem, 9vw, 3.4rem) 0;
+  }
+
+  .post-page > .floral-kicker {
+    margin-top: 0.7rem;
+    font-size: clamp(1.25rem, 8vw, 1.8rem);
+  }
+
+  .post-list {
+    gap: 0.75rem;
+    margin: clamp(1.5rem, 7vw, 2.3rem) 0;
+  }
+
+  .post-list article {
+    padding: 1rem;
+  }
+
+  .post-list article::before {
+    top: 0.85rem;
+    right: 0.85rem;
+  }
+
+  .spotify-control {
+    right: 0.65rem;
+    bottom: 0.65rem;
+    min-height: 42px;
+    padding: 0.45rem 0.6rem;
+  }
+
+  .spotify-logo {
+    width: 1.55rem;
+    height: 1.55rem;
+  }
+
+  .spotify-label {
+    max-width: 5rem;
+    overflow: hidden;
+    font-size: 0.76rem;
+    text-overflow: ellipsis;
+  }
+
+  .site-footer {
+    padding: 1.5rem 0.75rem 4.5rem;
+  }
+
+  .footer-inner {
+    gap: 0.85rem;
+  }
+
+  .footer-links {
+    display: grid;
+    width: 100%;
+    gap: 0.35rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-nav,
+  .section,
+  .footer-inner {
+    width: min(100% - 1.25rem, var(--max-width));
+  }
+
+  .brand {
+    align-self: flex-start;
   }
 
   .hero-actions,
@@ -1473,7 +1746,7 @@ h3 {
   }
 
   .petal-field {
-    bottom: -3.5rem;
+    bottom: -1.5rem;
   }
 
   .visual-grid img {
@@ -1483,6 +1756,21 @@ h3 {
   .spotify-control {
     right: 0.75rem;
     bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-list,
+  .home-section-links {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(2rem, 12vw, 2.8rem);
+  }
+
+  .spotify-label {
+    display: none;
   }
 }
 
