@@ -659,6 +659,23 @@ h3 {
   text-transform: none;
 }
 
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  #blog-title {
+    background-image:
+      linear-gradient(110deg, rgba(26, 26, 26, 0.48), rgba(143, 75, 77, 0.3), rgba(75, 91, 79, 0.28)),
+      url("immagini%20/PHOTO-2026-05-15-18-26-58.jpg");
+    background-position: center 48%;
+    background-size: cover;
+    color: rgba(74, 66, 64, 0.34);
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.62),
+      0 0.08em 0.22em rgba(72, 42, 35, 0.08);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
 .compact-section {
   width: 100%;
   padding-top: clamp(1rem, 3vw, 2rem);
