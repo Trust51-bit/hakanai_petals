@@ -23,7 +23,8 @@
     <header class="site-header">
       <nav class="site-nav" aria-label="Navigazione principale">
         <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">儚</span><span>Hakanai Petals</span></a>
-        <ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a aria-current="page" href="contact.html">Contact</a></li><li><a href="blog.html">Blog</a></li></ul>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle><span class="nav-toggle-box" aria-hidden="true"><span></span><span></span><span></span></span><span class="nav-toggle-text">Menu</span></button>
+        <ul class="nav-list" id="primary-menu" data-nav-menu data-open="false"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a aria-current="page" href="contact.html">Contact</a></li><li><a href="blog.html">Blog</a></li></ul>
       </nav>
     </header>
 
@@ -89,5 +90,6 @@
         window.location.href = `mailto:hakanaipetals.thediary@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
     </script>
+      <script src="nav.js" defer></script>
   </body>
 </html>

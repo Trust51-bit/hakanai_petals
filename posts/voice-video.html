@@ -23,7 +23,8 @@
     <header class="site-header">
       <nav class="site-nav" aria-label="Navigazione principale">
         <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">儚</span><span>Hakanai Petals</span></a>
-        <ul class="nav-list"><li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a aria-current="page" href="../blog.html">Blog</a></li></ul>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle><span class="nav-toggle-box" aria-hidden="true"><span></span><span></span><span></span></span><span class="nav-toggle-text">Menu</span></button>
+        <ul class="nav-list" id="primary-menu" data-nav-menu data-open="false"><li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a aria-current="page" href="../blog.html">Blog</a></li></ul>
       </nav>
     </header>
     <main class="post-page" aria-labelledby="page-title">
@@ -58,5 +59,6 @@
       </div>
     </footer>
     <a class="spotify-control" href="https://open.spotify.com/playlist/3NdEoD2QCSQydYxXW1InEg?si=9xNMBJHkQte8yZDQza0Dvg" target="_blank" rel="noopener noreferrer" aria-label="Apri la playlist Spotify di Hakanai Petals"><span class="spotify-logo" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="12"></circle><path d="M6.4 8.8c3.8-1.2 8.3-.8 11.4 1.1"></path><path d="M7.1 12c2.9-.9 6.5-.6 8.9.8"></path><path d="M7.8 15c2.1-.6 4.8-.4 6.6.6"></path></svg></span><span class="spotify-label">la mia playlist</span></a>
+      <script src="../nav.js" defer></script>
   </body>
 </html>
